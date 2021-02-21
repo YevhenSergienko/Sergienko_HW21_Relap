@@ -1,9 +1,10 @@
 .slider {
     position: relative;
     height: 768px;
+    width: 100%;
     background: url(../img/slider/slider_background.png) no-repeat center;
     background-size: cover;
-    padding: 16px;
+    padding-top: 16px;
 
     &__header {
         display: flex;
@@ -13,16 +14,24 @@
         &_logo {
             font-family: "Poppins", sans-serif;
             font-weight: 700;
-            font-size: 40px;
+            font-size: 24px;
             text-transform: uppercase;
             color: white;
+
+            @media (min-width: 768px) {
+                font-size: 40px;
+            }
         }
 
         &_menu {
             display: flex;
-            width: 620px;
             justify-content: space-between;
             align-items: center;
+            width: 60px;
+
+            @media (min-width: 992px) {
+                width: 620px;
+            }
 
             &Item {
                 font-family: "SourceSansPro", sans-serif;
@@ -38,7 +47,6 @@
                     #search {
                         transition: .5s;
                         fill: #FFC300;
-                        ;
                     }
                 }
             }
@@ -54,30 +62,66 @@
                     color: #765AFF;
                 }
             }
+
+            &Hamburger {
+                width: 16px;
+                height: 14px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media (min-width: 992px) {
+                    display: none;
+                }
+
+                &Item {
+                    width: 16px;
+                    height: 2px;
+                    background-color: white;
+                }
+            }
         }
     }
 
     &__subtitle {
-        margin-top: 200px;
+        margin-top: 70px;
         font-family: "Poppins", sans-serif;
         font-weight: 700;
         font-size: 16px;
         text-transform: uppercase;
         color: white;
+
+        @media (min-width: 992px) {
+            margin-top: 90px;
+        }
+        
+        @media (min-width: 1200px) {
+            margin-top: 200px;
+        }
     }
 
     &__title {
-        width: 480px;
-        margin-top: 25px;
+        margin-top: 18px;
         font-family: "Poppins", sans-serif;
         font-weight: 700;
-        font-size: 72px;
-        line-height: 72px;
+        font-size: 56px;
+        line-height: 64px;
         color: white;
+
+        @media (min-width: 768px) {
+            width: 370px;
+        }
+
+        @media (min-width: 992px) {
+            margin-top: 25px;
+            width: 480px;
+            font-size: 72px;
+            line-height: 72px;
+        }
     }
 
     &__readMoreBtn {
-        margin-top: 36px;
+        margin-top: 25px;
         padding: 12px 47px;
         border-radius: 24px;
         background-color: #FFC300;
@@ -86,6 +130,10 @@
         font-size: 16px;
         color: white;
         transition: .5s;
+
+        @media (min-width: 768px) {
+            margin-top: 36px;
+        }
 
         &:hover {
             border: 1px solid #FFC300;
@@ -97,8 +145,7 @@
     &__buttons {
         &_btn {
             position:absolute;
-            top:50%;
-            transform: translateY(-50%);
+            bottom: 128px;
             display:flex;
             justify-content: center;
             align-items: center;
@@ -108,6 +155,23 @@
             border: 1px solid white;
             border-radius: 50%;
             transition: .5s;
+
+            @media (min-width: 576px) {
+                bottom: 200px;
+            }
+
+            @media (min-width: 768px) {
+                bottom: 250px;
+            }
+
+            @media (min-width: 992px) {
+                bottom: 128px;
+            }
+
+            @media (min-width: 1440px) {
+                top:50%;
+                transform: translateY(-50%);
+            }
 
             &:hover {
                 border: 2px solid #765AFF;
@@ -120,9 +184,26 @@
                 #nextButton {
                     fill: #765AFF;
                 }
-
             }
         }
+    }
+}
+
+.hiddenMenuIten {
+    display: none;
+
+    @media (min-width: 992px) {
+        display: inline-block;
+    }
+}
+
+.magnifyingGlass {
+    width: 16px;
+    height: 16px;
+
+    @media (min-width: 992px) {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -143,7 +224,27 @@
     }
 
 .girl {
+    width: 260px;
     position: absolute;
     bottom: 0;
-    right: 13.33%;
+    right: 50%;
+    transform: translateX(50%);
+
+    @media (min-width: 576px) {
+        width: 350px;
+    }
+
+    @media (min-width: 768px) {
+        width: 420px;
+    }
+
+    @media (min-width: 992px) {
+        width: 450px;
+        right: 13.33%;
+        transform: translateX(0);
+    }
+
+    @media (min-width: 1200px) {
+        width: unset;
+    }
 }
