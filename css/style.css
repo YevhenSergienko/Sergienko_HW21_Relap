@@ -1,4 +1,6 @@
 .slider {
+  position: relative;
+  height: 768px;
   background: url(../img/slider/slider_background.png) no-repeat center;
   background-size: cover;
   padding: 16px;
@@ -29,20 +31,144 @@
   color: white;
   transition: 0.5s;
 }
-.slider__header_menuItem:not(:hover) #search {
-  transition: 0.5s;
-}
 .slider__header_menuItem:hover {
-  color: yellow;
+  color: #FFC300;
 }
 .slider__header_menuItem:hover #search {
   transition: 0.5s;
-  fill: yellow;
+  fill: #FFC300;
 }
 .slider__header_menuContactButton {
-  width: 170px;
+  padding: 12px 48px;
+  border-radius: 24px;
+  font-weight: 700;
+  border: 1px solid #765AFF;
+}
+.slider__header_menuContactButton:hover {
+  background-color: #FFC300;
+  color: #765AFF;
+}
+.slider__subtitle {
+  margin-top: 200px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+}
+.slider__title {
+  width: 480px;
+  margin-top: 25px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 72px;
+  color: white;
+}
+.slider__readMoreBtn {
+  margin-top: 36px;
+  padding: 12px 47px;
+  border-radius: 24px;
+  background-color: #FFC300;
+  font-family: "SourceSansPros", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  transition: 0.5s;
+}
+.slider__readMoreBtn:hover {
+  border: 1px solid #FFC300;
+  background-color: transparent;
+  color: #FFC300;
+}
+.slider__buttons_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
   height: 48px;
-  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.slider__buttons_btn:hover {
+  border: 2px solid #765AFF;
+  background-color: #FFC300;
+}
+.slider__buttons_btn:hover #previousButton {
+  fill: #765AFF;
+}
+.slider__buttons_btn:hover #nextButton {
+  fill: #765AFF;
+}
+
+#search {
+  transition: 0.5s;
+}
+
+#previousButton, #nextButton {
+  transition: 0.5s;
+}
+
+.prevBtn {
+  left: 16px;
+}
+
+.nextBtn {
+  right: 16px;
+}
+
+.girl {
+  position: absolute;
+  bottom: 0;
+  right: 13.33%;
+}
+
+.statistic {
+  background-color: #F2F2F2;
+  padding: 30px 0;
+}
+@media (min-width: 992px) {
+  .statistic {
+    padding: 100px 0;
+  }
+}
+@media (min-width: 992px) {
+  .statistic__wrapper {
+    flex-wrap: nowrap;
+  }
+}
+.statistic__item {
+  padding: 25px 15px;
+}
+@media (min-width: 768px) {
+  .statistic__item {
+    padding: 25px;
+  }
+}
+@media (min-width: 992px) {
+  .statistic__item {
+    padding-right: 30px;
+  }
+}
+.statistic__item_number {
+  margin-top: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+.statistic__item_descr {
+  margin-top: 8px;
+  font-family: "SourceSansPro", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
 }
 
 /*# sourceMappingURL=style.css.map */
