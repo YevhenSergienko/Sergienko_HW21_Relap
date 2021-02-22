@@ -5,6 +5,7 @@
   background: url(../img/slider/slider_background.png) no-repeat center;
   background-size: cover;
   padding-top: 16px;
+  overflow: hidden;
 }
 .slider__header {
   display: flex;
@@ -27,20 +28,45 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse;
   width: 60px;
+  height: 16px;
+  transition: 1s;
 }
 @media (min-width: 992px) {
   .slider__header_menu {
     width: 620px;
   }
 }
+.slider__header_menuWrapper {
+  position: absolute;
+  right: -100%;
+  top: 5px;
+  width: 200px;
+  height: 350px;
+  padding: 50px 30px 30px;
+  background-color: #8940ff;
+  border: 1px solid #FFC300;
+  border-radius: 20px;
+  box-shadow: -2px 2px 5px #FFC300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: 0.5s;
+}
 .slider__header_menuItem {
   font-family: "SourceSansPro", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
   text-decoration: none;
   color: white;
   transition: 0.5s;
+}
+@media (min-width: 992px) {
+  .slider__header_menuItem {
+    font-size: 16px;
+  }
 }
 .slider__header_menuItem:hover {
   color: #FFC300;
@@ -50,21 +76,34 @@
   fill: #FFC300;
 }
 .slider__header_menuContactButton {
-  padding: 12px 48px;
-  border-radius: 24px;
-  font-weight: 700;
-  border: 1px solid #765AFF;
+  padding: 0;
+  border: none;
+  font-weight: 600;
 }
 .slider__header_menuContactButton:hover {
-  background-color: #FFC300;
-  color: #765AFF;
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  .slider__header_menuContactButton {
+    padding: 12px 48px;
+    border-radius: 24px;
+    border: 1px solid #765AFF;
+    font-weight: 700;
+  }
+  .slider__header_menuContactButton:hover {
+    background-color: #FFC300;
+    color: #765AFF;
+  }
 }
 .slider__header_menuHamburger {
   width: 16px;
-  height: 14px;
+  height: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.slider__header_menuHamburger:hover .slider__header_menuHamburgerItem {
+  background-color: #FFC300;
 }
 @media (min-width: 992px) {
   .slider__header_menuHamburger {
@@ -75,6 +114,7 @@
   width: 16px;
   height: 2px;
   background-color: white;
+  transition: 0.5s;
 }
 .slider__subtitle {
   margin-top: 70px;
@@ -181,18 +221,69 @@
   fill: #765AFF;
 }
 
-.hiddenMenuIten {
-  display: none;
+.nav-checkbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: visible;
 }
+
 @media (min-width: 992px) {
   .hiddenMenuIten {
     display: inline-block;
   }
 }
 
+.nav-checkbox:checked ~ .slider__header_menuWrapper {
+  right: 5px;
+}
+
+#nav-checkbox:checked ~ .slider__header_menuItemMagnifying {
+  display: none;
+}
+
+#nav-checkbox:checked + .line1 {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+#nav-checkbox:checked ~ .hiddenMenuIten {
+  display: block;
+}
+
+/* #nav-trigger:checked {
+    & + .line1 {
+        position: absolute;
+        transform: rotate(45deg);
+    }
+
+    & .line2 {
+        display: none;
+    }
+
+    & .line3 {
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+
+
+
+     & .slider__header_menuItemMagnifying {
+        display: none;
+    } 
+
+     .hiddenMenuIten {
+        display: block;
+    } 
+
+} 
+ */
 .magnifyingGlass {
   width: 16px;
   height: 16px;
+}
+.magnifyingGlass:hover #search {
+  fill: #FFC300;
 }
 @media (min-width: 992px) {
   .magnifyingGlass {
@@ -205,6 +296,19 @@
   transition: 0.5s;
 }
 
+/* .line1 {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.line2 {
+    display: none;
+}
+
+.line3 {
+    position: absolute;
+    transform: rotate(-45deg);
+} */
 #previousButton, #nextButton {
   transition: 0.5s;
 }

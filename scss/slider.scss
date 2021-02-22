@@ -5,6 +5,7 @@
     background: url(../img/slider/slider_background.png) no-repeat center;
     background-size: cover;
     padding-top: 16px;
+    overflow: hidden;
 
     &__header {
         display: flex;
@@ -27,19 +28,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-direction: row-reverse;
             width: 60px;
+            height: 16px;
+            transition: 1s;
 
             @media (min-width: 992px) {
                 width: 620px;
             }
 
+            &Wrapper {
+                position: absolute;
+                right: -100%;
+                top: 5px;
+                width: 200px;
+                height: 350px;
+                padding: 50px 30px 30px;
+                background-color:  #8940ff;
+                border: 1px solid   #FFC300;
+                border-radius: 20px;
+                box-shadow: -2px 2px 5px #FFC300;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                transition: .5s;
+
+            }
+
             &Item {
                 font-family: "SourceSansPro", sans-serif;
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 24px;
                 text-decoration: none;
                 color: white;
                 transition: .5s;
+
+                @media (min-width: 992px) {
+                    font-size: 16px;
+                }
 
                 &:hover {
                     color: #FFC300;
@@ -52,23 +79,40 @@
             }
             
             &ContactButton {
-                padding: 12px 48px;
-                border-radius: 24px;
-                font-weight: 700;
-                border: 1px solid #765AFF; 
-                
+                padding: 0;
+                border: none;
+                font-weight: 600;
+
                 &:hover {
-                    background-color: #FFC300;
-                    color: #765AFF;
+                    background-color: transparent;
                 }
+
+                @media (min-width: 992px) {
+                    padding: 12px 48px;
+                    border-radius: 24px;
+                    border: 1px solid #765AFF; 
+                    font-weight: 700;
+                    
+                    &:hover {
+                        background-color: #FFC300;
+                        color: #765AFF;
+                    }
+                }
+                
             }
 
             &Hamburger {
                 width: 16px;
-                height: 14px;
+                height: 16px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                
+                
+                
+                &:hover &Item {
+                    background-color:  #FFC300;
+                }
 
                 @media (min-width: 992px) {
                     display: none;
@@ -78,6 +122,9 @@
                     width: 16px;
                     height: 2px;
                     background-color: white;
+                    transition: .5s;
+
+                    
                 }
             }
         }
@@ -189,18 +236,79 @@
     }
 }
 
+.nav-checkbox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    visibility: visible;
+}
+
 .hiddenMenuIten {
-    display: none;
+    
 
     @media (min-width: 992px) {
         display: inline-block;
     }
 }
 
+.nav-checkbox:checked ~ .slider__header_menuWrapper {
+    right: 5px;
+}
+
+#nav-checkbox:checked ~ .slider__header_menuItemMagnifying {
+    display:none;
+}
+
+#nav-checkbox:checked + .line1 {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#nav-checkbox:checked ~ .hiddenMenuIten {
+    display: block;
+
+}
+
+
+/* #nav-trigger:checked {
+    & + .line1 {
+        position: absolute;
+        transform: rotate(45deg);
+    }
+
+    & .line2 {
+        display: none;
+    }
+
+    & .line3 {
+        position: absolute;
+        transform: rotate(-45deg);
+    }
+
+   
+    
+     & .slider__header_menuItemMagnifying {
+        display: none;
+    } 
+
+     .hiddenMenuIten {
+        display: block;
+    } 
+
+} 
+ */
+
+
 .magnifyingGlass {
     width: 16px;
     height: 16px;
-
+    
+    &:hover {
+        #search {
+            fill: #FFC300;
+        }
+    }
+        
     @media (min-width: 992px) {
         width: 24px;
         height: 24px;
@@ -210,6 +318,20 @@
 #search {
     transition: .5s;
 }
+
+/* .line1 {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.line2 {
+    display: none;
+}
+
+.line3 {
+    position: absolute;
+    transform: rotate(-45deg);
+} */
 
 #previousButton, #nextButton {
     transition: .5s;
