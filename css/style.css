@@ -24,20 +24,6 @@
     font-size: 40px;
   }
 }
-.slider__header_menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  width: 60px;
-  height: 16px;
-  transition: 1s;
-}
-@media (min-width: 992px) {
-  .slider__header_menu {
-    width: 620px;
-  }
-}
 .slider__header_menuWrapper {
   position: absolute;
   right: -100%;
@@ -54,6 +40,19 @@
   justify-content: space-between;
   align-items: flex-start;
   transition: 0.5s;
+}
+@media (min-width: 992px) {
+  .slider__header_menuWrapper {
+    width: 620px;
+    position: unset;
+    height: unset;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .slider__header_menuItem {
   font-family: "SourceSansPro", sans-serif;
@@ -75,10 +74,36 @@
   transition: 0.5s;
   fill: #FFC300;
 }
+.slider__header_menuItemMagnifying {
+  display: none;
+}
+@media (min-width: 992px) {
+  .slider__header_menuItemMagnifying {
+    display: inline-block;
+  }
+}
+.slider__header_menuItemMagnifyingSmallScreen {
+  position: absolute;
+  top: 20px;
+  right: 64px;
+}
+@media (min-width: 992px) {
+  .slider__header_menuItemMagnifyingSmallScreen {
+    display: none;
+  }
+}
 .slider__header_menuContactButton {
   padding: 0;
   border: none;
   font-weight: 600;
+  outline: none;
+}
+.slider__header_menuContactButton:focus {
+  box-shadow: none;
+}
+.slider__header_menuContactButton:active {
+  background-color: #FFC300;
+  border: none;
 }
 .slider__header_menuContactButton:hover {
   background-color: transparent;
@@ -101,6 +126,34 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  top: 32px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 2;
+}
+.slider__header_menuHamburger > span,
+.slider__header_menuHamburger > span::before,
+.slider__header_menuHamburger > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: 0.5s;
+}
+.slider__header_menuHamburger:hover > span,
+.slider__header_menuHamburger:hover > span::before,
+.slider__header_menuHamburger:hover > span::after {
+  background-color: #FFC300;
+}
+.slider__header_menuHamburger > span::before {
+  content: "";
+  top: -6px;
+}
+.slider__header_menuHamburger > span::after {
+  content: "";
+  top: 6px;
 }
 .slider__header_menuHamburger:hover .slider__header_menuHamburgerItem {
   background-color: #FFC300;
@@ -109,12 +162,6 @@
   .slider__header_menuHamburger {
     display: none;
   }
-}
-.slider__header_menuHamburgerItem {
-  width: 16px;
-  height: 2px;
-  background-color: white;
-  transition: 0.5s;
 }
 .slider__subtitle {
   margin-top: 70px;
@@ -165,6 +212,15 @@
   font-size: 16px;
   color: white;
   transition: 0.5s;
+}
+.slider__readMoreBtn:focus {
+  box-shadow: none;
+  color: white;
+}
+.slider__readMoreBtn:active {
+  color: white;
+  background-color: #FFC300;
+  border: none;
 }
 @media (min-width: 768px) {
   .slider__readMoreBtn {
@@ -223,61 +279,29 @@
 
 .nav-checkbox {
   position: absolute;
-  right: 0;
-  top: 0;
-  visibility: visible;
+  right: 25px;
+  top: 25px;
+  visibility: hidden;
 }
 
-@media (min-width: 992px) {
-  .hiddenMenuIten {
-    display: inline-block;
-  }
-}
-
-.nav-checkbox:checked ~ .slider__header_menuWrapper {
+#nav-trigger:checked ~ .slider__header_menuWrapper {
   right: 5px;
 }
 
-#nav-checkbox:checked ~ .slider__header_menuItemMagnifying {
-  display: none;
-}
-
-#nav-checkbox:checked + .line1 {
-  position: absolute;
+#nav-trigger:checked ~ .slider__header_menuHamburger > span {
   transform: rotate(45deg);
 }
 
-#nav-checkbox:checked ~ .hiddenMenuIten {
-  display: block;
+#nav-trigger:checked ~ .slider__header_menuHamburger > span::before {
+  top: 0;
+  transform: rotate(0);
 }
 
-/* #nav-trigger:checked {
-    & + .line1 {
-        position: absolute;
-        transform: rotate(45deg);
-    }
+#nav-trigger:checked ~ .slider__header_menuHamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
 
-    & .line2 {
-        display: none;
-    }
-
-    & .line3 {
-        position: absolute;
-        transform: rotate(-45deg);
-    }
-
-
-
-     & .slider__header_menuItemMagnifying {
-        display: none;
-    } 
-
-     .hiddenMenuIten {
-        display: block;
-    } 
-
-} 
- */
 .magnifyingGlass {
   width: 16px;
   height: 16px;
@@ -296,19 +320,6 @@
   transition: 0.5s;
 }
 
-/* .line1 {
-    position: absolute;
-    transform: rotate(45deg);
-}
-
-.line2 {
-    display: none;
-}
-
-.line3 {
-    position: absolute;
-    transform: rotate(-45deg);
-} */
 #previousButton, #nextButton {
   transition: 0.5s;
 }

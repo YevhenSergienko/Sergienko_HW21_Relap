@@ -25,18 +25,6 @@
         }
 
         &_menu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
-            width: 60px;
-            height: 16px;
-            transition: 1s;
-
-            @media (min-width: 992px) {
-                width: 620px;
-            }
-
             &Wrapper {
                 position: absolute;
                 right: -100%;
@@ -54,6 +42,17 @@
                 align-items: flex-start;
                 transition: .5s;
 
+                @media (min-width: 992px) {
+                    width: 620px;
+                    position: unset;
+                    height: unset;
+                    padding: 0;
+                    background-color: transparent;
+                    border: none;
+                    box-shadow: none;
+                    flex-direction: row;
+                    align-items: center;
+                }
             }
 
             &Item {
@@ -76,12 +75,40 @@
                         fill: #FFC300;
                     }
                 }
+
+                &Magnifying {
+                    display: none;
+
+                    @media (min-width: 992px) {
+                        display: inline-block;
+                    }
+
+                    &SmallScreen {
+                        position: absolute;
+                        top: 20px;
+                        right: 64px;
+
+                        @media (min-width: 992px) {
+                            display: none;
+                        }
+                    }
+                }
             }
             
             &ContactButton {
                 padding: 0;
                 border: none;
                 font-weight: 600;
+                outline: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
+                
+                &:active{
+                    background-color:  #FFC300;
+                    border: none;
+                }
 
                 &:hover {
                     background-color: transparent;
@@ -98,7 +125,6 @@
                         color: #765AFF;
                     }
                 }
-                
             }
 
             &Hamburger {
@@ -107,8 +133,40 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                position: absolute;
+                top: 32px;
+                right: 25px;
+                cursor: pointer;
+                z-index: 2;
+
+                > span,
+                > span::before,
+                > span::after {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: white;
+                    transition: .5s;
+                }
                 
+                &:hover {
+                    > span,
+                    > span::before,
+                    > span::after {
+                        background-color:  #FFC300;
+                    }
+                }
+ 
+                > span::before {
+                    content: '';
+                    top: -6px;
+                }
                 
+                > span::after {
+                    content: '';
+                    top: 6px;
+                }
                 
                 &:hover &Item {
                     background-color:  #FFC300;
@@ -116,15 +174,6 @@
 
                 @media (min-width: 992px) {
                     display: none;
-                }
-
-                &Item {
-                    width: 16px;
-                    height: 2px;
-                    background-color: white;
-                    transition: .5s;
-
-                    
                 }
             }
         }
@@ -177,6 +226,18 @@
         font-size: 16px;
         color: white;
         transition: .5s;
+
+        &:focus {
+            box-shadow: none;
+            color: white;
+        }
+        
+        &:active{
+            color: white;
+            background-color:  #FFC300;
+            border: none;
+        }
+
 
         @media (min-width: 768px) {
             margin-top: 36px;
@@ -238,66 +299,28 @@
 
 .nav-checkbox {
     position: absolute;
-    right: 0;
-    top: 0;
-    visibility: visible;
+    right: 25px;
+    top: 25px;
+    visibility: hidden;
 }
 
-.hiddenMenuIten {
-    
-
-    @media (min-width: 992px) {
-        display: inline-block;
-    }
-}
-
-.nav-checkbox:checked ~ .slider__header_menuWrapper {
+#nav-trigger:checked ~ .slider__header_menuWrapper {
     right: 5px;
 }
 
-#nav-checkbox:checked ~ .slider__header_menuItemMagnifying {
-    display:none;
-}
-
-#nav-checkbox:checked + .line1 {
-    position: absolute;
+#nav-trigger:checked ~ .slider__header_menuHamburger > span {
     transform: rotate(45deg);
 }
-
-#nav-checkbox:checked ~ .hiddenMenuIten {
-    display: block;
-
+  
+#nav-trigger:checked ~ .slider__header_menuHamburger > span::before {
+    top: 0;
+    transform: rotate(0);
 }
-
-
-/* #nav-trigger:checked {
-    & + .line1 {
-        position: absolute;
-        transform: rotate(45deg);
-    }
-
-    & .line2 {
-        display: none;
-    }
-
-    & .line3 {
-        position: absolute;
-        transform: rotate(-45deg);
-    }
-
-   
-    
-     & .slider__header_menuItemMagnifying {
-        display: none;
-    } 
-
-     .hiddenMenuIten {
-        display: block;
-    } 
-
-} 
- */
-
+  
+#nav-trigger:checked ~ .slider__header_menuHamburger > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
 
 .magnifyingGlass {
     width: 16px;
@@ -319,31 +342,17 @@
     transition: .5s;
 }
 
-/* .line1 {
-    position: absolute;
-    transform: rotate(45deg);
-}
-
-.line2 {
-    display: none;
-}
-
-.line3 {
-    position: absolute;
-    transform: rotate(-45deg);
-} */
-
 #previousButton, #nextButton {
     transition: .5s;
 }
 
-.prevBtn{
+.prevBtn {
     left: 16px;
-    }
+}
 
-.nextBtn{
+.nextBtn {
     right: 16px;
-    }
+}
 
 .girl {
     width: 260px;
@@ -369,4 +378,4 @@
     @media (min-width: 1200px) {
         width: unset;
     }
-}
+}  
