@@ -1,2 +1,66 @@
 @import "slider";
 @import "statistic";
+@import "about";
+
+.page {
+    &__subtitle {
+        margin-top: 70px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: white;
+    
+        @media (min-width: 992px) {
+            margin-top: 90px;
+        }
+        
+        @media (min-width: 1200px) {
+            margin-top: 200px;
+        }
+    }
+    
+    &__title {
+        margin-top: 18px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 64px;
+        color: white;
+    
+        @media (min-width: 768px) {
+            width: 370px;
+        }
+    
+        @media (min-width: 992px) {
+            margin-top: 25px;
+            width: 480px;
+            font-size: 72px;
+            line-height: 72px;
+        }
+    }
+}
+
+
+.readMoreBtn {
+    margin-top: 25px;
+    padding: 12px 47px;
+    border-radius: 24px;
+    background-color: #FFC300;
+    font-family: "SourceSansPros", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    transition: .5s;
+
+    &:focus {
+        box-shadow: none;
+        color: white;
+    }
+    
+    &:active{
+        color: white;
+        background-color:  #FFC300;
+        border: none;
+    }
+}
