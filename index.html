@@ -5,8 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergienko_HW21_Relap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="slider">
+        <div class="container">
+            <header class="slider__header">
+                <div class="slider__header_logo">relap</div>
+                <div class="slider__header_menu">
+                    <a href="#" class="slider__header_menuItemMagnifyingSmallScreen">
+                        <svg class="magnifyingGlass" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="search" fill-rule="evenodd" clip-rule="evenodd" d="M17.7452 15.441L24 21.646L21.6271 24L15.3391 17.762C13.7625 18.833 11.8584 19.46 9.80806 19.46C4.40002 19.46 0 15.096 0 9.73C0 4.365 4.40002 0 9.80806 0C15.2171 0 19.6171 4.365 19.6171 9.73C19.6171 11.862 18.9216 13.836 17.7452 15.441ZM9.80906 2.853C5.98664 2.853 2.8769 5.938 2.8769 9.73C2.8769 13.522 5.98564 16.607 9.80906 16.607C13.6315 16.607 16.7412 13.522 16.7412 9.73C16.7412 5.938 13.6315 2.853 9.80906 2.853Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <input type="checkbox" id="nav-trigger" class="nav-checkbox"/>
+                    <label for="nav-trigger" class="slider__header_menuHamburger">
+                        <span></span>
+                    </label> 
+                    <div class="slider__header_menuWrapper">
+                        <a href="#" class="slider__header_menuItem">Features</a>
+                        <a href="#" class="slider__header_menuItem">Works</a>
+                        <a href="#" class="slider__header_menuItem">About</a>
+                        <a href="#" class="slider__header_menuItem">Blog</a>
+                        <a href="#" class="slider__header_menuItemMagnifying">
+                            <svg class="magnifyingGlass" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="search" fill-rule="evenodd" clip-rule="evenodd" d="M17.7452 15.441L24 21.646L21.6271 24L15.3391 17.762C13.7625 18.833 11.8584 19.46 9.80806 19.46C4.40002 19.46 0 15.096 0 9.73C0 4.365 4.40002 0 9.80806 0C15.2171 0 19.6171 4.365 19.6171 9.73C19.6171 11.862 18.9216 13.836 17.7452 15.441ZM9.80906 2.853C5.98664 2.853 2.8769 5.938 2.8769 9.73C2.8769 13.522 5.98564 16.607 9.80906 16.607C13.6315 16.607 16.7412 13.522 16.7412 9.73C16.7412 5.938 13.6315 2.853 9.80906 2.853Z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="btn btn-outline-secondary slider__header_menuItem slider__header_menuContactButton">Contact us</a>
+                    </div>
+                 </div>
+            </header>
+            <div class="slider__subtitle">quasi architecto</div>
+            <div class="slider__title">Beatae vitae dicta sunt</div>
+            <a href="#" class="btn btn-warning slider__readMoreBtn">Read more</a>
+            <div class="slider__buttons">
+                <div class="slider__buttons_btn prevBtn">
+                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="previousButton" fill-rule="evenodd" clip-rule="evenodd" d="M8.11333 0L10 1.886L3.774 8.00267L10 14.114L8.11333 16L0 8.00267L8.11333 0Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="slider__buttons_btn nextBtn">
+                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="nextButton" fill-rule="evenodd" clip-rule="evenodd" d="M1.88667 0L0 1.886L6.226 8.00267L0 14.114L1.88667 16L10 8.00267L1.88667 0Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+            <img src="img/slider/girl.png" alt="" class="girl">
+        </div>
+    </div>
+
+    <div class="statistic">
+        <div class="container">
+            <div class="row statistic__wrapper">
+                <div class="col-xs-12 col-sm-6 col-lg-3 statistic__item">
+                    <img src="icons/statistic/Turntable.png" alt="" class="statistic__item_icon">
+                    <div class="statistic__item_number">42+</div>
+                    <div class="statistic__item_descr">Voluptatem quia voluptas aspernatur aut odit aut fugit.</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-3 statistic__item">
+                    <img src="icons/statistic/Bagel.png" alt="" class="statistic__item_icon">
+                    <div class="statistic__item_number">73%</div>
+                    <div class="statistic__item_descr">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-3 statistic__item">
+                    <img src="icons/statistic/Health.png" alt="" class="statistic__item_icon">
+                    <div class="statistic__item_number">70+</div>
+                    <div class="statistic__item_descr">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-3 statistic__item">
+                    <img src="icons/statistic/Cake.png" alt="" class="statistic__item_icon">
+                    <div class="statistic__item_number">235</div>
+                    <div class="statistic__item_descr">Ut enim ad minima veniam, quis nostrum exercitationem ullam.</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

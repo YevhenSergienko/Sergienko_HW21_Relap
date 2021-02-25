@@ -1,0 +1,43 @@
+.statistic {
+    background-color: #F2F2F2;
+    padding: 30px 0;
+    
+    @media (min-width: 992px) {
+        padding: 100px 0;
+    }
+
+    &__wrapper {
+        @media (min-width: 992px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__item {
+        padding: 25px 15px;
+
+        @media (min-width: 768px) {
+            padding: 25px;
+        }
+
+        @media (min-width: 992px) {
+            padding-right: 30px;
+        }
+
+        &_number {
+            margin-top: 22px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 48px;
+        }
+
+        &_descr {
+            margin-top: 8px;
+            font-family: "SourceSansPro", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #333333;
+        }
+    }
+}
