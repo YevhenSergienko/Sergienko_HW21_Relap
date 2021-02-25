@@ -1,0 +1,41 @@
+.explore {
+    
+    height: 384px;
+    background-color: #3023AE;
+    position: relative;
+    overflow: hidden;
+    
+    
+
+    &__circle {
+        border-radius: 50%;
+        background: linear-gradient(224.72deg, #3023AE -1%, #C86DD7 100.5%);
+    }
+}
+
+.balloon {
+    &__wrapper {
+        &_leftBottom{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 384px; 
+        }
+    }
+
+    &_leftBottom {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        left: -60px;
+        bottom: -74px;
+    }
+    &_rightBottom {
+        width: 323px;
+        height: 323px;
+        position: absolute;
+        right: 0;
+        bottom: -125px;
+    }
+}
