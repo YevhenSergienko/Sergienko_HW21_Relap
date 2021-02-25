@@ -532,36 +532,124 @@
 }
 
 .explore {
-  height: 384px;
+  height: 448px;
   background-color: #3023AE;
   position: relative;
+}
+@media (min-width: 992px) {
+  .explore {
+    height: 384px;
+  }
+}
+.explore__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
 }
 .explore__circle {
   border-radius: 50%;
   background: linear-gradient(224.72deg, #3023AE -1%, #C86DD7 100.5%);
 }
+.explore__subtitle {
+  margin-top: 93px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+}
+@media (min-width: 768px) {
+  .explore__subtitle {
+    margin-top: 130px;
+  }
+}
+@media (min-width: 992px) {
+  .explore__subtitle {
+    margin-top: 93px;
+  }
+}
+.explore__title {
+  margin-top: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: white;
+}
+@media (min-width: 992px) {
+  .explore__title {
+    font-size: 46px;
+    line-height: 56px;
+  }
+}
+@media (min-width: 1200px) {
+  .explore__title {
+    font-size: 56px;
+    line-height: 64px;
+  }
+}
+.explore__buttonWrapper {
+  padding-top: 42px;
+}
+@media (min-width: 992px) {
+  .explore__buttonWrapper {
+    display: flex;
+    padding-top: 160px;
+    justify-content: flex-end;
+  }
+}
 
-.balloon__wrapper_leftBottom {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 384px;
+.balloon__wrapper {
+  position: relative;
+  width: 100%;
+  height: 448px;
+}
+@media (min-width: 992px) {
+  .balloon__wrapper {
+    height: 384px;
+  }
 }
 .balloon_leftBottom {
   width: 140px;
   height: 140px;
   position: absolute;
   left: -60px;
-  bottom: -74px;
+  bottom: -50px;
+}
+@media (min-width: 992px) {
+  .balloon_leftBottom {
+    bottom: -74px;
+  }
 }
 .balloon_rightBottom {
   width: 323px;
   height: 323px;
   position: absolute;
+  right: -219px;
+  bottom: -101px;
+}
+@media (min-width: 992px) {
+  .balloon_rightBottom {
+    right: 0;
+    bottom: -125px;
+  }
+}
+.balloon_top {
+  width: 100px;
+  height: 100px;
+  position: absolute;
   right: 0;
-  bottom: -125px;
+  top: -30px;
+  right: 35%;
+}
+
+.readMoreBtn.exploreBtn {
+  margin-top: 0;
+  padding: 12px 58px;
+  z-index: 3;
 }
 
 .page__subtitle {
